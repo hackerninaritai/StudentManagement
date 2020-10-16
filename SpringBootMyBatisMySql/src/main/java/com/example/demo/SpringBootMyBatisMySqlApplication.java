@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.core.SpringVersion;
 
 import com.example.demo.config.AppConfig;
 import com.example.demo.entities.Student;
@@ -15,6 +16,7 @@ public class SpringBootMyBatisMySqlApplication {
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		StudentService studentService = (StudentService) context.getBean("studentService");
 
+		System.out.println(SpringVersion.getVersion());
 		// create student
 		Student student1 = new Student("Jim", "Java Dev", 95, 1234568, "jimdev@gmail.com");
 

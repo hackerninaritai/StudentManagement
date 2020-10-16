@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.SubjectMapper" >
+    <!--<cache />-->
+    <resultMap id="baseResultMap" type="com.example.demo.domain.Subject" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="subject_name" property="subjectName" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="findAll" resultMap="baseResultMap">
+        select id, subject_name from subject
+    </select>
+</mapper>
